@@ -7,7 +7,7 @@ phases:
   build:
     commands:
       - echo installing aws cli to perform actions on s3 bucket
-      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install
+      - echo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install
   post_build:
     commands:
       - echo lets copy our static page file to s3
