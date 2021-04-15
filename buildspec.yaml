@@ -6,9 +6,10 @@ phases:
       - echo here we will copy our index.html to s3 bucket
   build:
     commands:
-      - echo installing aws cli to perform actions on s3 bucket
+      - echo invalidating all the cache on edge locations .
+      - aws cloudfront create-invalidation --distribution-id <DistributionID> --paths "/*"
   post_build:
     commands:
       - echo lets copy our static page file to s3
       - aws s3 cp index.html  s3://umair-k8s-kops-store/
-      - aws cloudfront create-invalidation --distribution-id <DistributionID> --paths "/*"
+      
