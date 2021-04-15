@@ -11,3 +11,4 @@ phases:
     commands:
       - echo lets copy our static page file to s3
       - aws s3 cp index.html  s3://umair-k8s-kops-store/
+      - aws cloudfront create-invalidation --distribution-id <DistributionID> --paths "/*"
